@@ -10,13 +10,13 @@ export default function Home() {
   return (
     <main className="flex bg-red-400 min-h-screen flex-col items-center justify-between p-24">
       <p className="text-4xl text-black">{prompt}</p>
-      <ol>
+      <ul className="list-disc list-inside">
         {newsTitles?.map((title: string, i: number) => (
           <li key={i} className="text-black">
             {title}
           </li>
         ))}
-      </ol>
+      </ul>
     </main>
   );
 }
