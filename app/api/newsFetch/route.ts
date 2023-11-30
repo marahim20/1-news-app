@@ -1,6 +1,6 @@
-export async function POST(req: Request) {
-  const body = await req.json();
-  const prompt = body.prompt;
+export async function GET(req: Request) {
+  const prompt = req.url.split("?")[1];
+  const prompt2 = prompt.split("=")[1];
   var url =
     "https://newsapi.org/v2/everything?" +
     `q=${prompt}&` +

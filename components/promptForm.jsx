@@ -8,11 +8,11 @@ export default function PromptForm() {
   const [input, setInput] = useState("");
   const clickHandler = async () => {
     localStorage.setItem("prompt", input);
-    const response = await fetch("/api/newsFetch", {
-      method: "POST",
-      body: JSON.stringify({ prompt: input }),
+    const response = await fetch("/api/newsFetch?prompt=" + input, {
+      method: "GET",
     });
     const data = await response.json();
+    console.log(data);
     localStorage.setItem("news", JSON.stringify(data));
     router.push("/news");
   };
