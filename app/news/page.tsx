@@ -3,8 +3,12 @@
 import React from "react";
 
 export default function Home() {
-  const prompt = localStorage.getItem("prompt");
-  const news = localStorage.getItem("news");
+  var prompt;
+  var news;
+  if (typeof window !== "undefined") {
+    prompt = localStorage.getItem("prompt");
+    news = localStorage.getItem("news");
+  }
   const newsData = news ? JSON.parse(news) : null;
   const newsTitles = newsData?.articles.map((article: any) => article.title);
   return (
