@@ -3,7 +3,7 @@ export async function GET(req: Request) {
   const prompt2 = prompt.split("=")[1];
   var url =
     "https://newsapi.org/v2/everything?" +
-    `q=${prompt}&` +
+    `q=${prompt2}&` +
     "sortBy=popularity&" +
     "apiKey=" +
     process.env.NEWS_API_KEY;
